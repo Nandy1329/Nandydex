@@ -1,2 +1,2 @@
-document.write(Nicholas);
-let Nicholas = "Nicholas";
+let myName = "Nicholas";
+alert(Nicholas);
