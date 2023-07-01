@@ -1,2 +1,1 @@
-let myName = "Nicholas";
-alert(Nicholas);
+alert('Hello World!');
