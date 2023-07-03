@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Play&display=swap"
-          rel="stylesheet"
-        />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play&display=swap"
+      rel="stylesheet"
+    />
 
-        <link rel="stylesheet" type="text/css" href="css/styles.css" />
-        <meta charset="utf-8" />
-        <link rel="shortcut icon" href="faviconico.ico" type="image/x-icon" />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
-        />
-        <title>Simple JS App</title>
-      </head>
-      <body>
-        <h2>My Favorite Food</h2>
-
-        <p>What is my favorite food?</p>
-        <p id="answer" style="display: none">My favorite food is meat</p>
-        <button
-          type="button"
-          onclick='document.getElementById("answer").style.display = "block"'
-        >
-          Click Me!
-        </button>
-
-        <script src="js/scripts.js"></script>
-      </body>
-    </html>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="faviconico.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+    />
+    <title>Simple JS App</title>
   </head>
+  <body>
+    <div class="body">
+      <h2>My Favorite Food</h2>
+
+      <p>What is my favorite food?</p>
+
+      <button id="myBtn" value="I love Meat!" onclick="alert(this.value)">
+        Click Here!
+      </button>
+    </div>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>

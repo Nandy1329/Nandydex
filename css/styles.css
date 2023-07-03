@@ -1,51 +1,27 @@
-
-
-body {
-    font-family: "Play", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    font-variant: small-caps;
-    line-height: 1.6;
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
 }
+  
+  body {
+	font-family: "Play", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	font-variant: small-caps;
+	line-height: 1.6; /* Sets the line-height to 1.6 */
+  }
+  
+  h1 {
+	font-size: 30px;
+	font-weight: 700;
+  }
+  
+  button {
+	background-color: var(--primary-color);
 
-h1 {
-    font-size: 30px;
-    font-weight: 700;
-  }
-  
-  h2 {
-    font-size: 24px;
-    font-weight: 700;
-  }
-  
-  h3 {
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  .button {
-    rotate: button-shared;
-    background-color: var(--primary-color);
-  
     button.hover,
-    button:focus {
-      cursor: pointer;
-      opacity: 0.8;
-  
-      .button__secondary {
-        background-color: var(--secondary-color);
-        color: var(--dark-grey);
-      }
-    }
-  
-    .button-shared {
-      border: none;
-      font-family: inherit;
-      background-color: var(--primary-color);
-      color: var(--cream);
-      text-decoration: none;
-      padding: 10px;
-      border-radius: 3px;
-      border-bottom: 2px solid var(--black);
+	button:focus {
+	  cursor: pointer;
+	  opacity: 0.8;
     }
   }
