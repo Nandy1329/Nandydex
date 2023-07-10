@@ -1,4 +1,4 @@
-pokemonList = [
+let pokemonList = [
     {
         name: "Pikachu",
         id, 25:
@@ -31,7 +31,7 @@ for (let i = 0; i < pokemonList.length; i++) {
 
     if (pokemonList[i].height >=4) {
         document.write(
-           '( height ${pokemonList[i].height} ft) - Woah, that's huge!' 
+           '( height ${pokemonList[i].height} ft) - Woah, that is big!' 
            + "<br/>");
 
     }
