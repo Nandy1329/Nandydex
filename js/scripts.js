@@ -5,14 +5,12 @@ let pokemonList = [
         type, ['electric']:
         height, 1.04:
 
-    }
 
     {
         name: "Machamp",
         id, 68:
         type, ['Fighting']:
         height, 5.03:
-    }
     
     {
 
@@ -20,15 +18,17 @@ let pokemonList = [
         id, 94:
         type, ['Ghost', 'Poison']:
         height, 4.11 :
-    }
+    
     {
         name, "Magikarp":
-        id: 129:
+        id, 129:
         type, ['Water']:
         height, 2.11 : 
-    }
+    
 
-]for (let i = 0; i < pokemonList.length; i++) {
+]; 
+
+ for (let i = 0; i < pokemonList.length; i++) {
     document.write (
         "#" + pokemonList[i].id + " " + pokemonList[i].name
         + "<br>"
@@ -41,14 +41,14 @@ let pokemonList = [
         )
     } else {
         document.write(
-           '( height ${pokemonList[i].height} ft) - Woah, that's huge!' 
-           + "<br/>");
+           '( height: ${pokemonList[i].height} ft) - Woah, that is huge!' 
+           + "<br>");
 
     }
 
     if (pokemonList[i].height <= 1) {
         document.write(
-            `(Height: ${pokemonList[i].height} ft) - Wow, that's small!`
+            `(Height: ${pokemonList[i].height} ft) - Wow, that is small!`
             + "<br>"
         )
     } else {
