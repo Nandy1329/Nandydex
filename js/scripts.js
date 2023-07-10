@@ -1,9 +1,9 @@
 pokemonList = [
     {
-        name: "Bulbasaur",
-        id, 1,
-        type: ['Grass', 'Poison'],
-        height: 2.04
+        name: "Pikachu",
+        id, 25,
+        type: ['electric'],
+        height: 1.04
     },
     {
         name: "Machamp",
@@ -25,35 +25,14 @@ pokemonList = [
     },
 ]; 
 
-for (let i = 0; i < pokemonList.height; i++) {
-    document.write (
-        "#" + pokemonList[i].id + " " + pokemonList[i].name
-        + "<br>"
-    )
 
-    if (pokemonList[i].type.height > 2.5) {
-        document.write(
-            `(Types: ${pokemonList[i].height[0]}, ${pokemonList[i].type[1]}) - Wow! Thats a big one!`
-            + "<br>"
-        )
-    } else {
-        document.write(
-            `(Type: ${pokemonList[i].type})`
-            + "<br>"
-        )
-        }
+for (let i = 0; i < pokemonList.length; i++) {
+    if (pokemonList[i].height >=8){
 
-    if (pokemonList[i].height <= 2 {
-        document.write(
-            `(height: ${pokemonList[i].height} ft) - Wow, that's small one!'
-            + "<br>"
-        )
+        document.write(pokemonList[i].name + pokemonList[i].height + "- Woah, that's huge!" + "<br/>");
+    }else if (pokemonList[i].height <8 && pokemonList[i].height >=5){
+        document.write(pokemonList[i].name + pokemonList[i].height + "- This is an average size" + "<br/>");
     } else {
-        document.write(
-            `(height: ${pokemonList[i].height} ft)`
-            + "<br>"
-        )
+        document.write(pokemonList[i].name + pokemonList[i].height + "- This guy is tiny!" + "<br/>");
     }
-
-    document.height("<br>")
-}
+    }
