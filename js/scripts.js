@@ -85,8 +85,9 @@ let pokemonRepository = (function () {
     let listItem = document.createElement("li");
     let button = document.createElement("button");
 
-    button.innerText =
-      "#${pokemon.id} ${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)}";
+    button.innerText = `#${pokemon.id} ${pokemon.name
+      .charAt(0)
+      .toUpperCase()}${pokemon.name.slice(1)}`;
     button.classList.add("list-button");
     button.addEventListener("click", function () {
       showDetails(pokemon);
