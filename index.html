@@ -10,21 +10,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Lato:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Handjet&family=Inconsolata&family=Lato:wght@700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
   </head>
+
   <body>
-    <div class="Pokedex">
-      <div class="Pokedex-image">
-        <h1 class="Pokedex-title">Pokedex</h1>
-    <div class="search-container">
-      <ul class="search-results"></ul>
+    <div class="pokedex">
+      <header class="pokedex__header">
+        <div class="pokedex__header--title">
+          <h1>pokedex</h1>
+        </div>
+      </header>
+
+      <main class="pokedex__main">
+        <ul class="pokemon-list"></ul>
+      </main>
     </div>
-    <ul class="pokemon-list"></ul>
-    <script src="js/promise-polyfill.js"></script>
-    <script src="js/fetch-polyfill.js"></script>
-    <script src="js/scripts.js"></script>
+
+    <div class="modal-container"></div>
+    <script src="./js/promise-polyfill.js"></script>
+    <script src="./js/fetch-polyfill.js"></script>
+    <script src="./js/scripts.js"></script>
   </body>
 </html>
