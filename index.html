@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Pokedex</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Handjet&family=Inconsolata&family=Lato:wght@700&display=swap"
-      rel="stylesheet"
-    />
-
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
   </head>
 
   <body>
-    <div class="pokedex">
-      <header class="pokedex__header">
-        <div class="pokedex__header--title">
-          <h1>pokedex</h1>
-        </div>
-      </header>
-
-      <main class="pokedex__main">
-        <ul class="pokemon-list"></ul>
-      </main>
-    </div>
-
-    <div class="modal-container"></div>
+    <h1>Pokedex</h1>
+    <ul class="pokemon-list"></ul>
+    <!--<div class="modal">
+      <button class="modal-close">close></button>
+      <h1>Pokemon name<h1>
+      <p>pokemon height</p>
+    </div-->
     <script src="./js/promise-polyfill.js"></script>
     <script src="./js/fetch-polyfill.js"></script>
     <script src="./js/scripts.js"></script>

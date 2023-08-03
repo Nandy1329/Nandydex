@@ -1,16 +1,9 @@
-:root {
-  :root {
-    --text-color: rgb(84,58,67,1);
-    --accent-color: rgb(37,65,55,1);
-    --screen-color: rgb(122,102,109,1);
-    --background-color: #a79a9f; 
-}
 .pokebutton {
-  background-color: var(--accent-color);
-  border: 1px solid var(--text-color);
+  background-color: #383c4a;
+  border: none;
   border-radius: 5px;
-  color: var(--text-color);
-  font-family: 'Roboto', sans-serif;
+  color: #5294e2; 
+  font-family: sans-serif;
   font-size: 20px;
   margin: 5px;
   padding: 15px;
@@ -18,15 +11,17 @@
   text-decoration: none;
   width: 100%;
 }
+
 .pokebutton:hover {
-  background-color: var(--text-color);
-  color: var(--accent-color);
+  background-color: 
+  color: 
 }
 .pokebutton:active {
-  background-color: var(--screen-color);
-  color: var(--background-color);
+  background-color:#7c818c; 
+  color: #5294e2;
 }
 .pokebutton:focus {
+  cursor: pointer;
   outline: none;
 }
 #modal-container.is-visible {
@@ -37,31 +32,30 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--background-color);
-}}
-z-index {
-  z-index: 1000;
+  background: #7c818c
+
 }
 
-display { 
-  display: flex;
-  flex-direction: column;
+/* make sure the modal is on top of other elements
+z-index 1000; 
+
+/*enable scrolling if the content is long
+overflow: auto; 
+ 
+/*transition effects
+ display: flex; 
+ flex-direction: column;
 text-align: center;
 align-content: center;
 justify-content: center;
 }
-#modal-container.is-visible .modal-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
+
 .modal {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
+  background: #fff;
+  padding: 20px;
   width: 100%;
   max-width: 500px;
   text-align: center;
@@ -69,25 +63,24 @@ justify-content: center;
 
 .modal-close {
   float: right;
-  color: var(--background-color);
+  color: #383c4a;
   font-size: 30px;
   font-weight: bold;
+  text-decoration: none;
   cursor: pointer;
 
 }
+
 .modal-close:hover,
 .modal-close:focus {
-  color: var(--text-color);
+  color: #5294e2;
   text-decoration: none;
-  outline: none;
-}
-.modal-close:active {
-  color: var(--accent-color);
+  cursor: pointer;
 }
 .modal h1 {
   margin-top: 0;
-}
+} 
 
-  .modal p {
-    margin-bottom: 0;
-  }
+.modal p { 
+  margin-bottom: 0;
+}
