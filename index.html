@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Play&display=swap"
-      rel="stylesheet"
-    />
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Pokedex</title>
-
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <title>Simple JS APP</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" >
   </head>
 
   <body>
-    <h1>Pokedex</h1>
+    <h1>Pokemon</h1>
+    <input type="text" class="search" placeholder="Search..." >
+    <button class="sort">Sort</button>
+    <button class="reset">Reset</button>
+
     <ul class="pokemon-list"></ul>
-    <!--<div class="modal">
-      <button class="modal-close">close></button>
-      <h1>Pokemon name<h1>
-      <p>pokemon height</p>
-    </div-->
-    <script src="./js/promise-polyfill.js"></script>
-    <script src="./js/fetch-polyfill.js"></script>
-    <script src="./js/scripts.js"></script>
+    <div id="modal-container">
+        <!-- <div class="modal">
+                <button class="modal-close">close</button>
+                <h1>Pokemon name</h1>
+                <p>pokemon height</p>
+            </div> -->
+      </div>
+      <strong>
+        <script src="js/fetch-pokemon.js"></script>
+        <script src="js/promise-polyfill.js"></script>
+        <script src="js/script.js"></script>
+      </strong>
   </body>
 </html>
