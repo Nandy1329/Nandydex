@@ -1,99 +1,106 @@
-.pokebutton {
+.pokemonButton {
   position: relative;
   width: 150px;
   height: 150px;
-  background: #3355c5;
-  border: 5px solid #000000;   
+  background: rgb(0, 162, 255);
+  border: 5px solid #e01717;
   border-radius: 50%;
   overflow: hidden;
-  animation: shake 1.25s cubic-bezier(.36,.07,.19,.97) both infinite;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 20px;
+  animation: shake 1.25s cubic-bezier(.36,.07,.19,.97) 1;
+  font-family: "pokemon-font", monospace;
+  font-size: 25px;
+  color: #ee0606;
+  text-align: center;
+  text-transform: capitalize;
   margin: 5px;
- display: inline-block;
- float: left;
-   
+  display:inline-block;
+  float: left;
 }
 
 
-@keyframes shake { //animation for the pokeball
+/* Animation */
+@keyframes shake {
   0% {
     transform: translate(0, 0) rotate(0);
-   }
-  20% { 
-    transform: translate(-10px, 0) rotate(-20deg); 
   }
-  30% { 
-    transform: translate(10px, 0) rotate(20deg); 
+  20% {
+    transform: translate(-10px, 0) rotate(-20deg);
+  }
+  30% {
+    transform: translate(10px, 0) rotate(20deg);
   }
   50% {
-     transform: translate(-10px, 0) rotate(-10deg); 
+    transform: translate(-10px, 0) rotate(-10deg);
   }
   60% {
-     transform: translate(10px, 0) rotate(10deg); 
+    transform: translate(10px, 0) rotate(10deg);
   }
   100% {
-     transform: translate(0, 0) rotate(0); 
+    transform: translate(0, 0) rotate(0);
   }
 }
 
-.pokeButton:hover {
-    cursor: pointer;
-    opacity: 0.8;
+.pokemonButton:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
+
 .pokemon-list {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 #modal-container.is-visible {
-    position: fixed;
-    padding: 20px;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000000cc;
-    z-index: 999; /* make sure the modal is on top of other elements*/
-    overflow: auto;  /* enable scrolling if the content is long*/
-    display: block;
-    text-align: center;/* center the modal content */
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(109, 36, 2, 0.5);
+  z-index: 999;
+  overflow: auto;
+  display: grid;
+  text-align: center;
+  display: block;
 }
 
-  .modal {
-    margin: auto;
-    border-radius: 30px;
-    display: inline-block;
-    box-sizing: border-box;
-    background: #2992bb;
-    padding: 15px;
-    width: 100%;
-    max-width: 700px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    text-transform: uppercase;
-    text-align: center;
-  }
-  
-  .modal-close {
-    float: right;
-    border: 0;
-    background: none;
-    color: #4e50d8;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+.modal {
+  margin: auto;
+  border-radius: 30px;
+  display: inline-block;
+  box-sizing: border-box;
+  background: rgb(182, 24, 24);
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: larger;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .modal h1 {
-    margin-top: 0;
-  }
-  
-  .modal p {
-    margin-bottom: 0;
-  }
-  #modal-container {}
-    display: none;
-  }
-  
+.modal-close {
+  float: right;
+  border: 0;
+  background: none;
+  color: #072bfa;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.modal h1 {
+  margin-top: 0;
+}
+
+.modal p {
+  margin-bottom: 0;
+}
+
+#modal-container {
+  display: none;
+}
