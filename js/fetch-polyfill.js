@@ -7,7 +7,7 @@ var g =
   {}
 
 var support = {
-  searchParams: 'URLSearchParams' in g,
+  searchParams: 'URLSearchParams' in g,;
   iterable: 'Symbol' in g && 'iterator' in Symbol,
   blob:
     'FileReader' in g &&
