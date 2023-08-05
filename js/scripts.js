@@ -1,17 +1,18 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150"; //API URL
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151"; //API URL
 
   function getAll() {
     return pokemonList;
   }
+
   function add(pokemon) {
   let correctKeys= ["name"];
   let objectKeys= Object.keys(pokemon);
   if (typeof pokemon === "object" && correctKeys[0] === objectKeys[0]) {
       // && correctKeys[1] === objectKeys[1] {
       // && correctKeys[2] === objectKeys[2] ) {
-    pokemonList.push(pokemon);
+      pokemonList.push(pokemon);
    } 
   }
 
@@ -23,9 +24,7 @@ let pokemonRepository = (function () {
     button.classList.add("pokemonButton");
     listItem.appendChild(button);
     pokemonListItems.appendChild(listItem);
-    button.addEventListener("click", function ()
-     {
-
+    button.addEventListener("click", function ()  {
       showDetails(pokemon);
     });
   }
@@ -46,7 +45,7 @@ let pokemonRepository = (function () {
 
     let closeButtonElement = document.createElement("button");
     closeButtonElement.classList.add("modal-close");
-    closeButtonElement.innerText = "Close";
+    closeButtonElement.innerText = "close";
     closeButtonElement.addEventListener("click", hideModal);
 
     let titleElement = document.createElement("h1");
@@ -72,28 +71,29 @@ let pokemonRepository = (function () {
     modalContainer.classList.add("is-visible");
   
   
-   window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
+    window.addEventListener("keydown", (e) => {
+      if (
+        e.key === "Escape" &&
+        modalContainer.classList.contains("is-visible")
+      ) {
         hideModal();
       }
     });
-  
+
     modalContainer.addEventListener("click", (e) => {
       let target = e.target;
       if (target === modalContainer) {
         hideModal();
       }
     });
-  };
-
-
+  }
   function hideModal() {
     let modalContainer = document.querySelector("#modal-container");
     modalContainer.classList.remove("is-visible");
   }
 
   function loadList() {
-    return fetch(apiUrl)
+    return fetch(apiURL)
       .then(function (response) {
         return response.json();
       })
@@ -112,11 +112,12 @@ let pokemonRepository = (function () {
   }
   
   function loadDetails(item) {
-    return fetch(apiUrl)
+    let url = item.detailsUrl;
+    return fetch(url)
       .then(function (response) {
         return response.json();
       })
-      then(function (details) {
+      .then(function (details) {
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
         item.types = details.types;
@@ -125,8 +126,6 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
-
-    
   return {
     getAll: getAll,
     add: add,
@@ -134,16 +133,31 @@ let pokemonRepository = (function () {
     showDetails: showDetails,
     loadList: loadList,
     loadDetails: loadDetails,
-    showModal: showModal,
+    showModal: showModal
   };
+})();
 
-
+//variable for big Pokemon
+// let bigPokemon = "Wow, that's big!"
+// condition nested in for loop to write list of pokemon and add big Pokemon variable if true
+// for (let i = 0; i < pokemonList.length; i++) {
+// if (pokemonList[i].height > 1.5) {
+//   document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + ') ' + bigPokemon + '<br>');
+// } else {
+//   document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + ') ' + '<br>');
+// }
+// }
+//testing add function
+// pokemonRepository.add({name: 'pikachu', height: '1.2', type: 'thunder'})
+//forEach Condition to List Pokemon (internal anonymous function)
 pokemonRepository.getAll().forEach(function (pokemon) {
   pokemonRepository.addListItem(pokemon);
 });
-
+//arrow function forEach
+// pokemonRepository.getAll().forEach(pokemon => pokemonRepository.addListItem(pokemon));
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
-});}) 
+});
+
