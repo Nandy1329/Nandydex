@@ -17,10 +17,7 @@ let pokemonRepository = (function() {
         // && correctKeys[2] === objectKeys[2] ) {
       pokemonList.push(pokemon);
       }
-    }
-    // Bonus Task 1.5.3 Filtering By Name
-    // function findByName(name) {}
-
+  
 
     function addListItem(pokemon) {
       let pokemonListItems = document.querySelector(".pokemon-list");          
@@ -150,8 +147,10 @@ let pokemonRepository = (function() {
       }).then(function(details) {
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
+        item.weight = details.weight;
         item.types = details.types;
         item.abilities = details.abilities;
+
       }).catch(function(e) {
         console.error(e);
       });
@@ -170,7 +169,7 @@ let pokemonRepository = (function() {
 })();
 
 //variable for big Pokemon
-// let bigPokemon = "Wow, that's big!"
+// let bigPokemon = "Wow, that's HUGE!"
 // condition nested in for loop to write list of pokemon and add big Pokemon variable if true
 // for (let i = 0; i < pokemonList.length; i++) {
 // if (pokemonList[i].height > 1.5) {
