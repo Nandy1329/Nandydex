@@ -4,7 +4,7 @@ let pokemonRepository = (function() {
   let apiURL = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
   // let searchInput = document.querySelector("#search-input");
   let searchInput = document.querySelector("#search-input");
-
+});
     function getAll() {
       return pokemonList;
     }
@@ -166,7 +166,7 @@ let pokemonRepository = (function() {
       showModal: showModal,
       filterSearch: filterSearch,
     };
-})();
+  })();
 
 //variable for big Pokemon
 // let bigPokemon = "Wow, that's HUGE!"
