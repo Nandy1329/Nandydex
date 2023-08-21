@@ -13,46 +13,46 @@
   <title>Pokedex</title>
 </head>
 
-<body>
-<header>
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="index.html" id="home-button">Pokedex</a>
-      <font face="Press Start 2P" size="4">Gotta Catch 'Em All!</font>
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search Pokemon" aria-label="Search" id="search-input">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-button">Search</button>
-      </form>
-    </nav>
-  </header>
+<body class="">
+  <nav class="navbar navbar-transparent bg-transparent">
+<img src="img/pokemon.png" alt="pokemon" class="img-fluid" width="200px">
+        <h1 class="text-center">Pokedex</h1>
+        <h2 class="text-center">Gotta catch 'em all!</h2>
+  </nav>
+
+<!-- <div class="container"> -->
   <ul class="list-group, pokemon-list"></ul>
 
+  <!-- Modal -->
   <div class="container justify-content-center">
     <ul class="list-group"></ul>
   </div>
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-sm" aria-hidden="true">
-      <div class="modal-content" role="document">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            &times;
-          </button>
-        </div>
-        <div class="modal-body">
-          <p class="pokemon-height"></p>
-          <p class="pokemon-weight"></p>
-          <div class="type-container">
-            <p class="pokemon-type1"></p>
-            <p class="pokemon-type2"></p>
+ <div
+      class="modal fade"
+      id="pokemonModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <div class="image-container">
-            <img class="pokemon-img" src="img" alt="pokemon image">
-          </div>
+          <div class="modal-body"></div>
         </div>
       </div>
     </div>
-  </div>
+
 
     <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
