@@ -12,10 +12,11 @@ let pokemonRepository = (function () {
         .then(function (json) {
           json.results.forEach(function (item, index) {
             let pokemon = {
-              id: index + 1,
-              name: item.name,
               detailsUrl: item.url,
+                name: item.name,
+                id: index + 1,
             };
+            
             // console.log(pokemon);
             add(pokemon);
           });
@@ -23,9 +24,7 @@ let pokemonRepository = (function () {
         .catch(function (e) {
           console.error(e);
         });
-    }
-  
-    //loads details of each pokemon from the detailsUrl, then adds them to the pokemon object
+    }   //loads details of each pokemon from the detailsUrl, then adds them to the pokemon object
     function loadDetails(pokemon) {
       let url = pokemon.detailsUrl;
       return fetch(url)
@@ -35,21 +34,16 @@ let pokemonRepository = (function () {
         .then(function (details) {
           //adds preview image
           pokemon.previewImageUrl = details.sprites.front_default;
-  
           //adds front image
           pokemon.imageUrl =
             details.sprites.other["official-artwork"].front_default;
           //adds back image
           pokemon.imageUrlBack =
             details.sprites.other["official-artwork"].front_shiny;
-  
-          pokemon.height = details.height;
-  
-          //adds types to the pokemonTypesArray, which then become accessible through pokemon.types
-          let pokemonTypesArray = [];
-  
-          details.types.forEach((type) => {
-            pokemonTypesArray.push(type.type.name);
+          pokemon.height = details.height;      //adds types to the pokemonTypesArray, which then become accessible through pokemon.types
+          let pokemonTypesArray = [];          //creates an array of types
+            details.types.forEach(function (item) {
+            pokemonTypesArray.push(item.type.name);    //pushes each type to the array
           });
           pokemon.types = pokemonTypesArray;
         })
@@ -57,10 +51,8 @@ let pokemonRepository = (function () {
           console.error(e);
         });
     }
-  
     //adds a new pokemon to the end of the list
-    function add(newPokemon) {
-      //checks if the new pokemon obj has the same properties as the first pokemon on the list (our default). If it does then it can push
+    function add(newPokemon) {    //checks if the new pokemon obj has the same properties as the first pokemon on the list (our default). If it does then it can push
       if (
         typeof newPokemon === "object" &&
         "name" in newPokemon &&
@@ -73,7 +65,6 @@ let pokemonRepository = (function () {
     function getAll() {
       return pokemonList;
     }
-  
     //logs pokemon details to console
     function showDetails(pokemon) {
       loadDetails(pokemon).then(function () {
@@ -82,7 +73,6 @@ let pokemonRepository = (function () {
       });
       // console.log(pokemon.name, pokemon.detailsUrl);
     }
-  
     //adds html element (li & button) to every pokemon of the list
     let button;
     function addListItem(pokemon) {
@@ -92,15 +82,14 @@ let pokemonRepository = (function () {
       listItem.classList.add("list-group-item");
       button = document.createElement("button");
       button.classList.add("btn", "btn-primary");
-  
+
       button.setAttribute("data-toggle", "modal");
       button.setAttribute("data-target", "#pokemonModal");
-  
+
       //creates image preview
       let imgPreview = document.createElement("img");
       imgPreview.classList.add("img-preview");
       imgPreview.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
-  
       //listens for click, then calls function when clicked
       button.addEventListener("click", function () {
         showDetails(pokemon);
@@ -112,8 +101,7 @@ let pokemonRepository = (function () {
       listItem.appendChild(button);
       pokemonUl.appendChild(listItem);
     }
-  
-    //returns all the functions that can be accessed from outside of main function here
+   //returns all the functions that can be accessed from outside of main function here
     return {
       add: add,
       getAll: getAll,
@@ -124,31 +112,24 @@ let pokemonRepository = (function () {
       // pokemonTypesArray: pokemonTypesArray,
     };
   })();
-  
   pokemonRepository.loadList().then(function () {
     //now data is loaded!
-  
     //generates new li and button items for each pokemon on the list
     pokemonRepository.getAll().forEach(function (pokemon) {
       pokemonRepository.addListItem(pokemon);
     });
   });
-  
   //creates popup window with pokemon name and details
   const modalBody = document.querySelector(".modal-body");
   const modalTitle = document.querySelector(".modal-title");
-  
   function showModal(pokemon) {
     //clears modal container if it had anything inside
     modalBody.innerHTML = "";
     modalTitle.innerHTML = "";
-  
     let modalPokemonTitle = document.createElement("div");
     modalPokemonTitle.innerText = pokemon.name;
-  
     let modalPokemonImgWrapper = document.createElement("div");
     modalPokemonImgWrapper.classList.add("modal-items", "card");
-  
     //front img
     let modalPokemonImg = document.createElement("img");
     modalPokemonImg.classList.add("modal-img", "card-side");
@@ -161,7 +142,6 @@ let pokemonRepository = (function () {
       "card-side--back"
     );
     modalPokemonImgBack.src = pokemon.imageUrlBack;
-  
     //height
     let modalPokemonHeight = document.createElement("p");
     modalPokemonHeight.classList.add("modal-items");
@@ -169,12 +149,9 @@ let pokemonRepository = (function () {
     //types
     let modalPokemonTypes = document.createElement("p");
     modalPokemonTypes.classList.add("modal-items");
-    modalPokemonTypes.innerText = `type: ${pokemon.types}`;
-  
+    modalPokemonTypes.innerText = `type: ${pokemon.types}`
     //img
-  
     //appendChild
-  
     modalTitle.appendChild(modalPokemonTitle);
     modalBody.appendChild(modalPokemonHeight);
     modalBody.appendChild(modalPokemonTypes);
