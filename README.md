@@ -14,3 +14,6 @@ The purpose of the project is to show basic JavaScript functionallity
  * Fetcj polyfill
  * Bootstrap
  * jQuery
+
+## Link to app
+https://nandy1329.github.io/Nandydex/
