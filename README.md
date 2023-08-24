@@ -17,4 +17,3 @@ The purpose of the project is to show basic JavaScript functionallity
 
 ## Link to app
 https://nandy1329.github.io/Nandydex/
->>>>>>> c6e8fb59e7f9f4dd5253ec4be7187e2a3e979952
