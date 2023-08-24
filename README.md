@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # simple-JS-app
 
 ## Overview of app
@@ -12,24 +11,7 @@ The purpose of the project is to show basic JavaScript functionallity
 
   ## Dependency
  * Promise polyfill
- * Fetcj polyfill
- * Bootstrap
- * jQuery
-=======
-# simple-JS-app
-
-## Overview of app
-Pokedex- The Pokedex app is a project built as a web app. HTML, CSS, and JavaScipt were used to build the app. 
-The purpose of the project is to show basic JavaScript functionallity
-
-## App Features
-* List items featured as a button showing lists fetched from external API
-* buttons opened and demonsrated hidden modal.
-* modal features animation
-
-  ## Dependency
- * Promise polyfill
- * Fetcj polyfill
+ * Fetch polyfill
  * Bootstrap
  * jQuery
 
